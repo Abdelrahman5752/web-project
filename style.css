@@ -1,0 +1,285 @@
+body{
+
+margin:0;
+font-family:Arial;
+background:#f4f4f4;
+
+}
+/* navbar */
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:#111;
+color:white;
+
+padding:15px 40px;
+position:sticky;
+top:0;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+
+}
+
+nav ul li{
+
+margin-left:20px;
+
+}
+
+nav ul li a{
+
+color:white;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+nav ul li a:hover{
+
+color:#00ffff;
+
+}
+
+
+/* hero */
+
+.hero{
+
+height:80vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(135deg,#141e30,#243b55);
+
+color:white;
+text-align:center;
+
+animation:fade 2s;
+
+}
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+
+/* cards */
+
+.cards{
+
+display:flex;
+justify-content:center;
+gap:30px;
+padding:50px;
+flex-wrap:wrap;
+
+}
+
+.card{
+
+background:white;
+width:250px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+text-align:center;
+
+transition:0.3s;
+
+}
+
+.card img{
+
+width:100%;
+height:160px;
+object-fit:cover;
+
+border-radius:12px 12px 0 0;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card h3{
+
+margin:15px;
+
+}
+
+.card p{
+
+padding:0 15px 20px;
+
+}
+
+
+/* content pages */
+
+.content{
+
+padding:50px;
+text-align:center;
+
+}
+
+.content img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.content p{
+font-size:24px;
+line-height:1.6;
+}
+
+/* contact form */
+
+.contact-form{
+
+display:flex;
+flex-direction:column;
+width:300px;
+margin:auto;
+gap:15px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+
+}
+
+.contact-form button{
+
+padding:10px;
+border:none;
+background:#00bcd4;
+color:white;
+cursor:pointer;
+
+}
+
+.contact-form button:hover{
+
+background:#0097a7;
+
+}
+
+
+/* footer */
+
+footer{
+
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+
+}
+
+
+/* animation */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+/* dark mode */
+
+.dark{
+
+background:#121212;
+color:white;
+
+}
+
+.dark .card{
+
+background:#1e1e1e;
+
+}
+.mode-btn{
+
+background:none;
+border:none;
+font-size:22px;
+cursor:pointer;
+color:white;
+
+transition:0.3s;
+
+}
+
+.mode-btn:hover{
+
+transform:scale(1.2);
+
+}
+.page-hero{
+
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+
+padding:100px 20px;
+
+text-align:center;
+
+}
+
+.features{
+
+padding:50px;
+text-align:center;
+
+}
+
+.features ul{
+
+list-style:none;
+padding:0;
+
+}
+
+.features li{
+
+margin:10px;
+font-size:18px;
+
+}
+
+
