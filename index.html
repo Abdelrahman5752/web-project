@@ -7,25 +7,30 @@
 </head>
 
 <body>
+<div id="loader">
 
+<div class="spinner"></div>
+
+</div>
 <nav>
 
-<h2>Future Tech</h2>
+<h2 class="logo">Future Tech</h2>
 
-<ul>
+<ul class="nav-links">
+
 <li><a href="index.html">Home</a></li>
 <li><a href="ai.html">AI</a></li>
 <li><a href="cloud.html">Cloud</a></li>
 <li><a href="security.html">Cyber Security</a></li>
 <li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">login</a></li>
+
 </ul>
 
-<button class="mode-btn" onclick="toggleMode()">🌙</button>
+<button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
 
 </nav>
 
-
+<div id="particles-js"></div>
 <section class="hero">
 
 <h1>Future Technology</h1>
@@ -80,6 +85,6 @@
 
 
 <script src="script.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </body>
 </html>
