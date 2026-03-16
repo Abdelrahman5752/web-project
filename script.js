@@ -1,3 +1,6 @@
+window.addEventListener("load", function(){
+  document.getElementById("loader").style.display = "none";
+});
 const canvas = document.getElementById("matrix");
 
 if (canvas) {
