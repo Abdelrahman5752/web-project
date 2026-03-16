@@ -1,6 +1,4 @@
-window.addEventListener("load", function(){
-  document.getElementById("loader").style.display = "none";
-});
+
 const canvas = document.getElementById("matrix");
 
 if (canvas) {
@@ -40,7 +38,12 @@ if (canvas) {
     canvas.height = window.innerHeight;
   });
 }
-
+particlesJS("particles-js", {
+  particles: { number: { value: 80 } }
+});
+window.addEventListener("load", function(){
+  document.getElementById("loader").style.display = "none";
+});
 // Responsive
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
