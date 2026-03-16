@@ -32,18 +32,6 @@ if (canvas) {
   }
 
   setInterval(drawMatrix, 35);
-
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-}
-particlesJS("particles-js", {
-  particles: { number: { value: 80 } }
-});
-window.addEventListener("load", function(){
-  document.getElementById("loader").style.display = "none";
-});
 // Responsive
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
