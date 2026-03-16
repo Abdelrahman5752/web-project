@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Login - Future Tech</title>
+<title>Login</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,16 +12,17 @@
 
 <h2>Future Tech</h2>
 
-<ul class="nav-links">
+<ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="ai.html">AI</a></li>
 <li><a href="cloud.html">Cloud</a></li>
 <li><a href="security.html">Cyber Security</a></li>
 <li><a href="contact.html">Contact</a></li>
-<li><a href="Register.html">Sign Up</a></li>
-</ul>
+<li><a href="login.html">Login</a></li>
 
-<button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
+<button class="mode-btn" onclick="toggleMode()">🌙</button>
+
+</ul>
 
 </nav>
 
@@ -30,16 +31,26 @@
 
 <div class="login-box">
 
+<div class="robot">
+
+<div class="eyes">
+<div class="eye"><div class="pupil"></div></div>
+<div class="eye"><div class="pupil"></div></div>
+</div>
+
+</div>
+
 <h1>Login</h1>
 
-<form>
+<form onsubmit="loginUser(event)">
 
-<input type="email" placeholder="Email" required>
-<input type="password" placeholder="Password" required>
+<input type="email" id="loginEmail" placeholder="Email" onfocus="closeEyes()" onblur="openEyes()" required>
+
+<input type="password" id="loginPassword" placeholder="Password" onfocus="closeEyes()" onblur="openEyes()" required>
 
 <button type="submit">Login</button>
 
-<p>Don't have an account? <a href="Register.html">Sign Up</a></p>
+<p>Don't have an account? <a href="Register.html">Sign up</a></p>
 
 </form>
 
@@ -48,7 +59,7 @@
 </section>
 
 <footer>
-<p>© 2026 Future Tech</p>
+<p>© 2026 Future Tech Website</p>
 </footer>
 
 <script src="script.js"></script>
