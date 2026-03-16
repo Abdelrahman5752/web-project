@@ -1,4 +1,7 @@
-
+/* في ملف script.js */
+particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 const canvas = document.getElementById("matrix");
 
 if (canvas) {
@@ -30,8 +33,8 @@ if (canvas) {
       drops[i]++;
     }
   }
-
   setInterval(drawMatrix, 35);
+  
 // Responsive
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
