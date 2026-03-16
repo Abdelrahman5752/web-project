@@ -718,32 +718,24 @@ background:black;
 }
 /* MATRIX CYBER EFFECT */
 
-#matrix{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-background:black;
-}
-@keyframes fall{
-
-0%{
-transform:translateY(-20px);
+/* MATRIX CODE RAIN */
+#matrix {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-2; /* خليته تحت كل العناصر */
+  background:black;
 }
 
-100%{
-transform:translateY(110vh);
+/* Dark / Light mode */
+body.dark #matrix {
+  background:black;
 }
 
-}
-body.dark #matrix{
-background:black;
-}
-
-body:not(.dark) #matrix{
-background:#f4f4f4; /* نفس لون الـ light mode */
+body:not(.dark) #matrix {
+  background:#f4f4f4;
 }
 /* CLOUD RAIN */
 
