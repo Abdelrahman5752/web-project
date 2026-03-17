@@ -830,14 +830,14 @@ body {
     background-color: black; /* لون احتياطي */
 }
 
-#binaryCanvas {
+/* التنسيق ده هيطبق بس لما الـ canvas يكون موجود */
+#cyberCanvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* لجعلها خلف المحتوى */
-    display: block;
+    z-index: -1;
 }
 /* responsive */
 
