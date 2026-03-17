@@ -1,40 +1,4 @@
-const canvas = document.getElementById('cyberCanvas');
 
-// الشرط ده هو اللي بيخلي الكود يشتغل في صفحة الـ Cyber بس
-if (canvas) {
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const fontSize = 16;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops = Array(columns).fill(1);
-
-    function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = '#00f2ff'; // اللون الأزرق اللي في الصورة
-        ctx.font = fontSize + 'px monospace';
-
-        for (let i = 0; i < drops.length; i++) {
-            const text = Math.floor(Math.random() * 2);
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i]++;
-        }
-    }
-
-    setInterval(draw, 50);
-}
 const pupils = document.querySelectorAll(".pupil")
 
 document.addEventListener("mousemove",(e)=>{
