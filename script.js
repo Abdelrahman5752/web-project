@@ -100,7 +100,9 @@ for (let x = 0; x < columns; x++) {
 
 const draw = () => {
     // خلفية شبه شفافة لعمل تأثير التلاشي (Trail)
-    context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+   ctx.fillStyle = document.body.classList.contains("dark")
+  ? 'rgba(0,0,0,0.05)'   // dark mode
+  : 'rgba(255,255,255,0.05)'; // light mode
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     context.fillStyle = '#0F0'; // لون الحروف أخضر
