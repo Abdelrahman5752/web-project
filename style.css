@@ -823,7 +823,22 @@ top:110%;
 }
 
 }
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* لمنع التمرير الأفقي */
+    background-color: black; /* لون احتياطي */
+}
 
+#binaryCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* لجعلها خلف المحتوى */
+    display: block;
+}
 /* responsive */
 
 @media(max-width:768px){
