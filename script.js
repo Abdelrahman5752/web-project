@@ -105,7 +105,9 @@ const draw = () => {
   : 'rgba(255,255,255,0.05)'; // light mode
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    context.fillStyle = '#0F0'; // لون الحروف أخضر
+ctx.fillStyle = document.body.classList.contains("dark")
+  ? '#00ff9d'   // أخضر في الدارك
+  : '#0077ff';  // أزرق في اللايت
     context.font = fontSize + 'px monospace';
 
     for (let i = 0; i < rainDrops.length; i++) {
