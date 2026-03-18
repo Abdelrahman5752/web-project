@@ -1,6 +1,6 @@
 const matrix = document.getElementById("matrix");
 
-const characters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const characters = "01010101010101010101010101010101010101";
 
 function createCode(){
 
