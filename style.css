@@ -717,7 +717,9 @@ background:black;
   100% { transform: translate(0,0); }
 }
 /* MATRIX CYBER EFFECT */
-
+body {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); //change backgroud color
+}
 #matrix{
 position:fixed;
 top:0;
@@ -725,16 +727,12 @@ left:0;
 width:100%;
 height:100%;
 z-index:-1;
-}
+overflow:hidden;
+font-family:monospace;
+color:#00ff00;
 
-/* light */
-body:not(.dark) #matrix{
-background:#f4f4f4;
-}
-
-/* dark */
-body.dark #matrix{
-background:black;
+/* الخلفية تتحكم حسب المود */
+background: transparent;
 }
 @keyframes fall{
 
