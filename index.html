@@ -1,90 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>Future Tech</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Future Tech</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div id="loader">
 
-<div class="spinner"></div>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
 
-</div>
-<nav>
+    <!-- Navbar -->
+    <nav>
+        <h2 class="logo">Future Tech</h2>
 
-<h2 class="logo">Future Tech</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="cloud.html">Cloud</a></li>
+            <li><a href="security.html">Cyber Security</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
 
-<ul class="nav-links">
+        <button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
+    </nav>
 
-<li><a href="index.html">Home</a></li>
-<li><a href="ai.html">AI</a></li>
-<li><a href="cloud.html">Cloud</a></li>
-<li><a href="security.html">Cyber Security</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">Login</a></li>
-</ul>
+    <!-- Background Particles -->
+    <div id="particles-js"></div>
 
-<button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Future Technology</h1>
+        <p>Explore AI, Cloud Computing and Cyber Security</p>
+    </section>
 
-</nav>
+    <!-- Cards Section -->
+    <section class="cards">
 
-<div id="particles-js"></div>
-<section class="hero">
+        <div class="card" onclick="location.href='ai.html'">
+            <img src="images/igor-omilaev-eGGFZ5X2LnA-unsplash.jpg" alt="AI">
+            <h3>Artificial Intelligence</h3>
+            <p>Machines that can learn and think like humans.</p>
+        </div>
 
-<h1>Future Technology</h1>
+        <div class="card" onclick="location.href='cloud.html'">
+            <img src="images/growtika-Am6pBe2FpJw-unsplash.jpg" alt="Cloud">
+            <h3>Cloud Computing</h3>
+            <p>Store and access data using the internet.</p>
+        </div>
 
-<p>Explore AI, Cloud Computing and Cyber Security</p>
+        <div class="card" onclick="location.href='security.html'">
+            <img src="images/flyd-zAhAUSdRLJ8-unsplash.jpg" alt="Security">
+            <h3>Cyber Security</h3>
+            <p>Protecting systems and networks from attacks.</p>
+        </div>
 
-</section>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Future Tech Website</p>
+    </footer>
 
-<section class="cards">
-
-<div class="card" onclick="location.href='ai.html'">
-
-<img src="images/igor-omilaev-eGGFZ5X2LnA-unsplash.jpg">
-
-<h3>Artificial Intelligence</h3>
-
-<p>Machines that can learn and think like humans.</p>
-
-</div>
-
-
-<div class="card" onclick="location.href='cloud.html'">
-
-<img src="images/growtika-Am6pBe2FpJw-unsplash.jpg">
-
-<h3>Cloud Computing</h3>
-
-<p>Store and access data using the internet.</p>
-
-</div>
-
-
-<div class="card" onclick="location.href='security.html'">
-
-<img src="images/flyd-zAhAUSdRLJ8-unsplash.jpg">
-
-<h3>Cyber Security</h3>
-
-<p>Protecting systems and networks from attacks.</p>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Future Tech Website</p>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
