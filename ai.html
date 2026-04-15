@@ -1,159 +1,117 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Artificial Intelligence</title>
-<link rel="stylesheet" href="style.css">
+  <title>Artificial Intelligence</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div id="loader">
 
-<div class="spinner"></div>
-</div>
-<nav>
-
-<h2>Future Tech</h2>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="ai.html">AI</a></li>
-<li><a href="cloud.html">Cloud</a></li>
-<li><a href="security.html">Cyber Security</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">Login</a></li>
-<button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
-</ul>
-
-</nav>
-
-
-<section class="page-hero">
-
-<h1>Artificial Intelligence</h1>
-<p>Technology that allows machines to learn and think.</p>
-
-</section>
-
-
-<section class="content">
-
-<img src="images/steve-johnson-_0iV9LmPDn0-unsplash.jpg">
-
-<p>
-Artificial Intelligence (AI) is one of the most important technologies in the modern world.
-It allows computers to analyze data, learn from experience, and perform tasks that normally require human intelligence.
-</p>
-
-</section>
-
-
-<section class="cards">
-
-<div class="card">
-
-<h3>Machine Learning</h3>
-
-<p>
-Machine Learning allows systems to automatically learn and improve from experience without being explicitly programmed.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Computer Vision</h3>
-
-<p>
-Computer Vision allows machines to interpret and understand visual information from the world.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Natural Language Processing</h3>
-
-<p>
-NLP allows computers to understand and communicate using human language.
-</p>
-
-</div>
-
-</section>
-
-
-<section class="features">
-
-<h2>Advantages of AI</h2>
-
-<ul>
-
-<li>Automation of repetitive tasks</li>
-<li>Better data analysis</li>
-<li>Improved decision making</li>
-<li>Innovation in many industries</li>
-
-</ul>
-
-</section>
-<div class="cloud-bot">
-  <!-- الرأس / العينين -->
-  <div class="bot-head">
-    <div class="eye left-eye"></div>
-    <div class="eye right-eye"></div>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
   </div>
 
-  <!-- الجسم (يشبه سيرفر) -->
-  <div class="bot-body"></div>
+  <!-- Navbar -->
+  <nav>
+    <h2>Future Tech</h2>
 
-  <!-- أذرع تتحرك -->
-  <div class="arm left-arm"></div>
-  <div class="arm right-arm"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ai.html">AI</a></li>
+      <li><a href="cloud.html">Cloud</a></li>
+      <li><a href="security.html">Cyber Security</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
+    </ul>
+  </nav>
 
-  <!-- بيانات متحركة حوله -->
-  <div class="data-dot dot1"></div>
-  <div class="data-dot dot2"></div>
-  <div class="data-dot dot3"></div>
-</div>
-<script>
-const bot = document.querySelector('.cloud-bot');
-const eyes = document.querySelectorAll('.cloud-bot .eye');
-const maxX = window.innerWidth - 100;
-const maxY = window.innerHeight - 150;
+  <!-- Page Hero Section -->
+  <section class="page-hero">
+    <h1>Artificial Intelligence</h1>
+    <p>Technology that allows machines to learn and think.</p>
+  </section>
 
-function moveBotRandom() {
-  const x = Math.random() * maxX;
-  const y = Math.random() * maxY;
-  const rotation = (Math.random() * 20) - 10;
-  bot.style.left = `${x}px`;
-  bot.style.bottom = `${y}px`;
-  bot.style.transform = `rotate(${rotation}deg)`;
-}
-setInterval(moveBotRandom, 2500);
+  <!-- Main Content Section -->
+  <section class="content">
+    <img src="images/steve-johnson-_0iV9LmPDn0-unsplash.jpg" alt="AI Image">
 
-// العيون تتبع الماوس
-document.addEventListener('mousemove', e => {
-  eyes.forEach(eye => {
-    const rect = eye.getBoundingClientRect();
-    const eyeX = rect.left + rect.width/2;
-    const eyeY = rect.top + rect.height/2;
-    const dx = e.clientX - eyeX;
-    const dy = e.clientY - eyeY;
-    const angle = Math.atan2(dy, dx);
-    const distance = Math.min(5, Math.hypot(dx, dy)/15);
-    eye.style.transform = `translate(${distance*Math.cos(angle)}px, ${distance*Math.sin(angle)}px)`;
-  });
-});
-</script>
+    <p>
+      Artificial Intelligence (AI) is one of the most important technologies in the modern world.
+      It allows computers to analyze data, learn from experience, and perform tasks that normally require human intelligence.
+    </p>
+  </section>
 
-<footer>
+  <!-- Cards Section -->
+  <section class="cards">
 
-<p>© 2026 Future Tech</p>
+    <div class="card">
+      <h3>Machine Learning</h3>
+      <p>
+        Machine Learning allows systems to automatically learn and improve from experience without being explicitly programmed.
+      </p>
+    </div>
 
-</footer>
-<script src="script.js"></script>
+    <div class="card">
+      <h3>Computer Vision</h3>
+      <p>
+        Computer Vision allows machines to interpret and understand visual information from the world.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Natural Language Processing</h3>
+      <p>
+        NLP allows computers to understand and communicate using human language.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Advantages of AI</h2>
+
+    <ul>
+      <li>Automation of repetitive tasks</li>
+      <li>Better data analysis</li>
+      <li>Improved decision making</li>
+      <li>Innovation in many industries</li>
+    </ul>
+  </section>
+
+  <!-- Floating Cloud Bot -->
+  <div class="cloud-bot">
+
+
+    <!-- Bot head with eyes -->
+    <div class="bot-head">
+      <div class="bot-eye left-eye"></div>
+      <div class="bot-eye right-eye"></div>
+    </div>
+
+    <!-- Bot body -->
+    <div class="bot-body"></div>
+
+    <!-- Moving arms -->
+    <div class="arm left-arm"></div>
+    <div class="arm right-arm"></div>
+
+    <!-- Floating data particles -->
+    <div class="data-dot dot1"></div>
+    <div class="data-dot dot2"></div>
+    <div class="data-dot dot3"></div>
+
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Future Tech</p>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+
 </body>
 </html>
