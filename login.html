@@ -1,68 +1,49 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Login</title>
-<link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!-- Navigation -->
+    <nav>
+        <h2>Future Tech</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="cloud.html">Cloud</a></li>
+            <li><a href="security.html">Cyber Security</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <button class="mode-btn" onclick="toggleMode()">🌙</button>
+        </ul>
+    </nav>
 
-<nav>
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-box">
+            <div class="robot">
+                <div class="eyes">
+                    <div class="eye"><div class="pupil"></div></div>
+                    <div class="eye"><div class="pupil"></div></div>
+                </div>
+            </div>
 
-<h2>Future Tech</h2>
+            <h1>Login</h1>
+            <form onsubmit="loginUser(event)">
+                <input type="email" id="loginEmail" placeholder="Email" onfocus="closeEyes()" onblur="openEyes()" required>
+                <input type="password" id="loginPassword" placeholder="Password" onfocus="closeEyes()" onblur="openEyes()" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="Register.html">Sign up</a></p>
+            </form>
+        </div>
+    </section>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="ai.html">AI</a></li>
-<li><a href="cloud.html">Cloud</a></li>
-<li><a href="security.html">Cyber Security</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="login.html">Login</a></li>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Future Tech Website</p>
+    </footer>
 
-<button class="mode-btn" onclick="toggleMode()">🌙</button>
-
-</ul>
-
-</nav>
-
-
-<section class="login-section">
-
-<div class="login-box">
-
-<div class="robot">
-
-<div class="eyes">
-<div class="eye"><div class="pupil"></div></div>
-<div class="eye"><div class="pupil"></div></div>
-</div>
-
-</div>
-
-<h1>Login</h1>
-
-<form onsubmit="loginUser(event)">
-
-<input type="email" id="loginEmail" placeholder="Email" onfocus="closeEyes()" onblur="openEyes()" required>
-
-<input type="password" id="loginPassword" placeholder="Password" onfocus="closeEyes()" onblur="openEyes()" required>
-
-<button type="submit">Login</button>
-
-<p>Don't have an account? <a href="Register.html">Sign up</a></p>
-
-</form>
-
-</div>
-
-</section>
-
-<footer>
-<p>© 2026 Future Tech Website</p>
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
