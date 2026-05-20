@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Future Tech</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <!-- Loader -->
@@ -14,19 +12,48 @@
         <div class="spinner"></div>
     </div>
 
+    <!-- Side Menu -->
+    <div id="sideMenu">
+        <div class="side-menu-header">
+            <h3>📡 Future Tech</h3>
+            <button class="close-side-btn" onclick="closeSideMenu()">✕</button>
+        </div>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="ai.html">🤖 AI</a></li>
+            <li><a href="cloud.html">☁️ Cloud</a></li>
+            <li><a href="security.html">🔒 Cyber Security</a></li>
+            <li><a href="contact.html">📧 Contact</a></li>
+            <li><a href="login.html">🔑 Login</a></li>
+        </ul>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal">
+        <div class="cart-modal-header">
+            <h2>🛒 Your Cart</h2>
+            <button class="close-cart-btn" onclick="closeCart()">✕</button>
+        </div>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: $0.00</div>
+        <button class="checkout-btn" onclick="checkout()">✅ Checkout</button>
+        <div id="checkout-msg"></div>
+    </div>
+
     <!-- Navbar -->
     <nav>
+        <button class="hamburger-btn" onclick="openSideMenu()">☰</button>
         <h2 class="logo">Future Tech</h2>
-
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="ai.html">AI</a></li>
             <li><a href="cloud.html">Cloud</a></li>
             <li><a href="security.html">Cyber Security</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li class="login-nav-link"><a href="login.html">Login</a></li>
+            <li><span class="user-display" style="display:none;"></span></li>
         </ul>
-
+        <button class="cart-nav-btn" onclick="openCart()">🛒<span class="cart-badge" style="display:none;">0</span></button>
         <button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
     </nav>
 
@@ -39,27 +66,82 @@
         <p>Explore AI, Cloud Computing and Cyber Security</p>
     </section>
 
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+        <h2>🌐 Tech Highlights</h2>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="images/igor-omilaev-eGGFZ5X2LnA-unsplash.jpg" alt="AI">
+                <div class="slide-caption">🤖 Artificial Intelligence — The Future is Now</div>
+            </div>
+            <div class="slide">
+                <img src="images/growtika-Am6pBe2FpJw-unsplash.jpg" alt="Cloud">
+                <div class="slide-caption">☁️ Cloud Computing — Power Without Limits</div>
+            </div>
+            <div class="slide">
+                <img src="images/flyd-zAhAUSdRLJ8-unsplash.jpg" alt="Security">
+                <div class="slide-caption">🔒 Cyber Security — Protecting the Digital World</div>
+            </div>
+            <div class="slide">
+                <img src="images/steve-johnson-_0iV9LmPDn0-unsplash.jpg" alt="Tech">
+                <div class="slide-caption">🚀 Next-Gen Technology — Innovate, Evolve, Inspire</div>
+            </div>
+        </div>
+        <div class="slide-controls">
+            <button onclick="changeSlide(-1)">◀</button>
+            <button onclick="changeSlide(1)">▶</button>
+        </div>
+    </section>
+
     <!-- Cards Section -->
     <section class="cards">
-
         <div class="card" onclick="location.href='ai.html'">
             <img src="images/igor-omilaev-eGGFZ5X2LnA-unsplash.jpg" alt="AI">
             <h3>Artificial Intelligence</h3>
             <p>Machines that can learn and think like humans.</p>
         </div>
-
         <div class="card" onclick="location.href='cloud.html'">
             <img src="images/growtika-Am6pBe2FpJw-unsplash.jpg" alt="Cloud">
             <h3>Cloud Computing</h3>
             <p>Store and access data using the internet.</p>
         </div>
-
         <div class="card" onclick="location.href='security.html'">
             <img src="images/flyd-zAhAUSdRLJ8-unsplash.jpg" alt="Security">
             <h3>Cyber Security</h3>
             <p>Protecting systems and networks from attacks.</p>
         </div>
+    </section>
 
+    <!-- Shop / Cart Section -->
+    <section class="shop-section">
+        <h2>🛍️ Tech Store</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🤖</div>
+                <h4>AI Starter Kit</h4>
+                <div class="price">$49.99</div>
+                <button onclick="addToCart('AI Starter Kit', 49.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">☁️</div>
+                <h4>Cloud Storage 1TB</h4>
+                <div class="price">$29.99</div>
+                <button onclick="addToCart('Cloud Storage 1TB', 29.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🔒</div>
+                <h4>Security Suite Pro</h4>
+                <div class="price">$79.99</div>
+                <button onclick="addToCart('Security Suite Pro', 79.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">💻</div>
+                <h4>Dev Workstation</h4>
+                <div class="price">$199.99</div>
+                <button onclick="addToCart('Dev Workstation', 199.99)">Add to Cart</button>
+            </div>
+        </div>
+        <div id="cart-msg"></div>
     </section>
 
     <!-- Footer -->
@@ -68,7 +150,5 @@
     </footer>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>
