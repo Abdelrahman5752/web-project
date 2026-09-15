@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
     <title>Cyber Security</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,7 +19,7 @@
             <li><a href="cloud.html">Cloud</a></li>
             <li><a href="security.html">Cyber Security</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li class="login-nav-link"><a href="login.html">Login</a></li><li><span class="user-display" style="display:none"></span></li>
             <button class="mode-btn" id="modeBtn" onclick="toggleMode()">🌙</button>
         </ul>
     </nav>
@@ -72,6 +74,7 @@
     </footer>
 
     <script src="script.js"></script>
+<script src="app.js"></script>
     <script src="matrix.js"></script>
 </body>
 </html>

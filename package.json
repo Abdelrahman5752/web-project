@@ -1,0 +1,9 @@
+{
+  "name": "future-tech-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Future Tech portfolio: browser frontend, Node.js API and SQLite persistence",
+  "engines": { "node": ">=22.14.0" },
+  "scripts": { "start": "node server.js", "test": "node --test" }
+}

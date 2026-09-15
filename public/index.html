@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Future Tech</title>
     <link rel="stylesheet" href="style.css">
@@ -36,8 +37,8 @@
         </div>
         <div id="cart-items"></div>
         <div id="cart-total">Total: $0.00</div>
-        <button class="checkout-btn" onclick="checkout()">✅ Checkout</button>
-        <div id="checkout-msg"></div>
+        <button class="checkout-btn" onclick="checkout()">Place order</button>
+        <p>No payment will be collected.</p><a href="login.html">Sign in</a> · <a href="orders.html">My orders</a><div id="checkout-msg"></div>
     </div>
 
     <!-- Navbar -->
@@ -115,32 +116,8 @@
     <!-- Shop / Cart Section -->
     <section class="shop-section">
         <h2>🛍️ Tech Store</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon">🤖</div>
-                <h4>AI Starter Kit</h4>
-                <div class="price">$49.99</div>
-                <button onclick="addToCart('AI Starter Kit', 49.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">☁️</div>
-                <h4>Cloud Storage 1TB</h4>
-                <div class="price">$29.99</div>
-                <button onclick="addToCart('Cloud Storage 1TB', 29.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">🔒</div>
-                <h4>Security Suite Pro</h4>
-                <div class="price">$79.99</div>
-                <button onclick="addToCart('Security Suite Pro', 79.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">💻</div>
-                <h4>Dev Workstation</h4>
-                <div class="price">$199.99</div>
-                <button onclick="addToCart('Dev Workstation', 199.99)">Add to Cart</button>
-            </div>
-        </div>
+        <p class="store-note">Demo catalog. Orders are saved, but payments and product delivery are not available.</p>
+<div class="products-grid" aria-live="polite"><p>Loading products…</p></div>
         <div id="cart-msg"></div>
     </section>
 
@@ -150,5 +127,6 @@
     </footer>
 
     <script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
