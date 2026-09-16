@@ -179,7 +179,7 @@ export async function createApp({ dbPath = path.join(root, 'data', 'future-tech.
       if (!error.status) console.error('Request failed:', error.code || error.name); // Never log credentials or request bodies.
     }
   });
-  return { server, close: () => new Promise((resolve,reject) => server.close(async error => { try { await db.close(); error ? reject(error) : resolve(); } catch (failure) { reject(failure); } })) };
+  return { server, close: () => new Promise((resolve,reject) => server.close(async error => { try { await db.close(); error && error.code !== 'ERR_SERVER_NOT_RUNNING' ? reject(error) : resolve(); } catch (failure) { reject(failure); } })) };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {

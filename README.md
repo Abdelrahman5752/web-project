@@ -2,7 +2,7 @@
 
 A small full-stack application extending Abdelrahman's existing HTML/CSS/JavaScript website. The UI calls a Node.js HTTP API; SQLite stores data locally, while PostgreSQL (Neon) stores hosted data when `DATABASE_URL` is set.
 
-**Free hosting instructions:** [Render + Neon walkthrough in Arabic](DEPLOY-AR.md). The repository includes `render.yaml` for a free Render web service. Configure the Neon connection URL privately in Render; never commit it. Hosting setup and live Neon connectivity must be verified in your accounts.
+**Free hosting instructions:** [Netlify + Neon walkthrough in Arabic](NETLIFY-AR.md). Netlify serves the public pages and runs the API as a function. Configure the Neon connection URL privately in Netlify; never commit it. Hosting setup and live Neon connectivity must be verified in your accounts. The older [Render walkthrough](DEPLOY-AR.md) remains available as an alternative; Render may require card verification.
 
 Original frontend: https://github.com/Abdelrahman5752/web-project
 

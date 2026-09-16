@@ -41,3 +41,6 @@ Executed locally with headless Microsoft Edge via Playwright, against an isolate
 ## Limits
 
 This was local functional verification, not a penetration test, load test, full accessibility audit or multi-browser certification. No actual payment, email delivery or public deployment was tested; those features are not implemented. Screenshots from browser tests use synthetic test accounts and orders.
+# Netlify adaptation verification
+
+The suite now passes 21 test nodes, including simulated Netlify function events for routing, registration cookies, authenticated checkout, origin rejection, warm instance reuse and recovery from missing configuration. Syntax checks also pass. These are local checks, not evidence of a live Netlify deployment or Neon connectivity. Serverless in-memory rate limits apply per function instance.
