@@ -9,7 +9,7 @@ import { createApp } from '../server.js';
 test('authentication, protected orders, validation and persistence', async t => {
   const directory = mkdtempSync(path.join(tmpdir(),'future-tech-test-'));
   const dbPath = path.join(directory,'test.sqlite');
-  let app = createApp({ dbPath });
+  let app = await createApp({ dbPath, databaseUrl: '', secureCookies: false, origin: '' });
   await new Promise(resolve => app.server.listen(0,'127.0.0.1',resolve));
   let port = app.server.address().port;
   async function request(route, body, cookie = '', customHeaders = {}) {
@@ -85,7 +85,7 @@ test('authentication, protected orders, validation and persistence', async t => 
       assert.equal(db.prepare('SELECT count(*) AS n FROM messages').get().n,1); db.close();
     });
     await t.test('data and active sessions survive restart', async () => {
-      await app.close(); app = createApp({dbPath});
+      await app.close(); app = await createApp({dbPath, databaseUrl: '', secureCookies: false, origin: ''});
       await new Promise(resolve => app.server.listen(0,'127.0.0.1',resolve)); port = app.server.address().port;
       assert.equal((await request('/api/orders',undefined,alice)).data.orders[0].id,orderId);
     });
@@ -100,3 +100,4 @@ test('authentication, protected orders, validation and persistence', async t => 
     });
   } finally { await app.close(); rmSync(directory,{recursive:true,force:true}); }
 });
+

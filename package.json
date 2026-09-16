@@ -3,7 +3,18 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Future Tech portfolio: browser frontend, Node.js API and SQLite persistence",
-  "engines": { "node": ">=22.14.0" },
-  "scripts": { "start": "node server.js", "test": "node --test" }
+  "description": "Future Tech portfolio with Node.js, local SQLite and hosted PostgreSQL",
+  "engines": {
+    "node": ">=22.14.0 <23"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8"
+  }
 }

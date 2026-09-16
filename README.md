@@ -1,12 +1,20 @@
 # Future Tech — Full-stack portfolio project
 
-A small full-stack application extending Abdelrahman's existing HTML/CSS/JavaScript website. The UI calls a Node.js HTTP API; SQLite stores accounts, sessions, products, orders and contact messages.
+A small full-stack application extending Abdelrahman's existing HTML/CSS/JavaScript website. The UI calls a Node.js HTTP API; SQLite stores data locally, while PostgreSQL (Neon) stores hosted data when `DATABASE_URL` is set.
+
+**Free hosting instructions:** [Render + Neon walkthrough in Arabic](DEPLOY-AR.md). The repository includes `render.yaml` for a free Render web service. Configure the Neon connection URL privately in Render; never commit it. Hosting setup and live Neon connectivity must be verified in your accounts.
 
 Original frontend: https://github.com/Abdelrahman5752/web-project
 
 ## Run locally
 
-Requires Node.js 22.14 or newer with `node:sqlite`. There are no third-party runtime dependencies and no `npm install` step.
+Requires Node.js 22.14 or newer within Node 22. Install dependencies once after downloading or updating:
+
+```sh
+npm ci
+```
+
+The `pg` package handles hosted PostgreSQL. Local mode still uses Node's built-in SQLite.
 
 ```sh
 npm start
@@ -22,7 +30,7 @@ Create an account with a password of at least 12 characters, add a product, plac
 npm test
 ```
 
-The integration suite uses an isolated temporary database, cleans it up, and does not modify your local application data.
+The integration suite uses isolated temporary SQLite and PGlite (local PostgreSQL) databases. It does not need or connect to Neon. Run tests in a local development environment with DATABASE_URL and NODE_ENV unset, not against a live database.
 
 ## Included behavior
 
@@ -50,8 +58,11 @@ public/            Browser pages, styles, scripts and original images
   script.js        Existing visual interactions
   app.js           API-backed accounts, product rendering, cart, orders, contact
   orders.html      Signed-in user's saved orders
-server.js          HTTP routing, validation, authentication and SQLite storage
+server.js          HTTP routing, validation and authentication
+database.js        SQLite/PostgreSQL storage adapters and schema
 test/api.test.js   API integration and security regression scenarios
+test/postgres.test.js PostgreSQL, transaction and hosting configuration checks
+render.yaml        Free Render deployment configuration
 data/              Created on first run; private SQLite data (gitignored)
 QA-REPORT.md       What was verified and the limits of that verification
 LEARNING-AR.md     Arabic walkthrough
@@ -62,6 +73,7 @@ LEARNING-AR.md     Arabic walkthrough
 | Method | Path | Purpose |
 |---|---|---|
 | GET | `/api/products` | Public product catalog |
+| GET | `/api/health` | Database health check |
 | POST | `/api/register` | Create account and session: name, email, password |
 | POST | `/api/login` | Create session: email, password |
 | GET | `/api/me` | Current public user data or null |
@@ -75,10 +87,11 @@ Write requests require `Origin: http://localhost:3000` locally and JSON content 
 ## Configuration
 
 - `PORT`: default `3000`.
-- `HOST`: default `127.0.0.1` (local access only).
-- `APP_ORIGIN`: exact browser origin for writes; default `http://localhost:<actual-port>`.
-- `NODE_ENV=production`: enables Secure cookies; requires HTTPS through the deployment setup.
+- `HOST`: default `127.0.0.1` locally, `0.0.0.0` in production.
+- `DATABASE_URL`: hosted PostgreSQL connection string. Required in production; absent locally means SQLite.
+- `APP_ORIGIN`: exact browser origin for writes; falls back to Render's `RENDER_EXTERNAL_URL`, then `http://localhost:<actual-port>` locally.
+- `NODE_ENV=production`: enables Secure cookies; requires HTTPS and DATABASE_URL, refusing ephemeral local storage.
 
 For a reverse proxy, explicitly set the public HTTPS `APP_ORIGIN`; do not derive it from untrusted forwarded headers. Configure the host/network exposure deliberately. GitHub Pages cannot run this Node.js backend or store SQLite changes.
 
-Database location is `data/future-tech.sqlite`. Keep the full data directory private. Stop the server before making a simple filesystem backup so the SQLite WAL is settled, or use a proper online SQLite backup tool. No demo accounts or customer data are bundled.
+Local database location is `data/future-tech.sqlite`. Keep the full data directory private. Stop the server before making a simple filesystem backup so the SQLite WAL is settled, or use a proper online SQLite backup tool. No demo accounts or customer data are bundled. Local records are not automatically migrated to Neon. Database changes on the hosted service persist in Neon independently of Render's filesystem.

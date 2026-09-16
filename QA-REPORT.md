@@ -1,5 +1,13 @@
 # Verification record
 
+## Hosting update — PostgreSQL support
+
+The updated suite passes 19 test nodes: 11 SQLite scenario subtests, 5 PostgreSQL scenario subtests, their 2 parents, and 1 production configuration test.
+
+PostgreSQL scenarios run against a real local PostgreSQL WASM engine (PGlite) through a pg-compatible test adapter. They verify schema initialization, secure cookies, account uniqueness/isolation, server prices, concurrent checkout retry handling, rollback without partial orders, contact storage, and persistence across application restart. Production is tested to refuse local storage when DATABASE_URL is absent.
+
+These checks do **not** verify Neon network connectivity, TLS negotiation through the pg driver, Render deployment, free-plan availability, or any user account configuration. Those require the real deployment. The tests below describe the original SQLite suite and browser walkthrough.
+
 ## Automated API regression
 
 Executed with Node.js v22.14.0 and `node --test` on the delivered implementation.
